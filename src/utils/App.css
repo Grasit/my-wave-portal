@@ -1,0 +1,117 @@
+body{
+    background-color: #909090;
+    padding: 1rem;
+  }
+  
+  .mainContainer {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    margin: auto 0;
+  }
+  
+  .dataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+  }
+  
+  .header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .bio {
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .waveButton {
+    cursor: pointer;
+    padding: 1rem;
+    border: 0;
+    border-radius: 5px;
+    background-color: purple;
+    width: 50%;
+    margin : 16px auto;
+    color: whitesmoke;
+    font-size: 20px;
+  }
+  
+  .connectButton {
+    cursor: pointer;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #909090;
+    width: 50%;
+    margin : 1rem auto;
+    color: purple;
+    font-size: 20px;
+  }
+  
+  .connectButton:hover {
+    background-color: purple;
+    color: whitesmoke;
+    border: 0;
+  }
+  
+  .progress {
+    border: 1rem solid #f3f3f3;
+    border-radius: 50%;
+    margin: 1rem auto;
+    border-top: 1rem solid #3498db;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .allWaves{
+    background-color: #edc045;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  input[type=text]{
+    padding:1rem;
+    margin: 1rem 0;
+  }
+  
+  input[type=text]:focus{
+    outline:none;
+  }
+  
+  @media only screen and (max-width: 600px) {
+     .dataContainer{
+      width: 100%;
+      margin-top: 2rem;
+      padding: 0.5rem;
+    }
+  
+    .bio{
+      font-size: 1.3rem;
+      text-align: center;
+      display: flex;
+      justify-content:center;
+    }
+
+    .waveButton, .connectButton{
+      width: 100%;
+    }
+  }
