@@ -6,19 +6,22 @@ import abi from "../utils/WavePortal.json";
 const App =() =>  {
 
    /*
-  * Just a state variable we use to store our user's public wallet.
+  * state variable to store user's public wallet.
   */
   const [currentAccount, setCurrentAccount] = useState("");
+
   /* state variable to show progress bar*/
   const [showBar, setShowBar] = useState("");
+
   /* state variable to show all waves*/
   const [allWaves, setAllWaves] = useState([]);
+
   /*state variable to return message sent*/
   const [msg, setMsg] = useState(""); 
 
   /*function to show loader*/
     const onClick = async () =>{
-      setShowBar(true)
+      setShowBar(true);
     };
     
 const handleChange = event => {
@@ -26,7 +29,7 @@ const handleChange = event => {
         setMsg(value);
     }
   
-   /* Create a method that gets all waves from your contract
+   /* this method gets all waves from the contract
    */
   const getAllWaves = async () => {
     const { ethereum } = window;
@@ -39,7 +42,7 @@ const handleChange = event => {
          ethers.Contract(contractAddress, contractABI, signer);
 
         /*
-         * Call the getAllWaves method from your Smart Contract
+         * Calls the getAllWaves method from the Smart Contract
          */
         const waves = await wavePortalContract.getAllWaves();
         
@@ -69,7 +72,7 @@ const handleChange = event => {
         }
       });
         /*
-         * Store our data in React State
+         * this stores our data in React.state
          */
         setAllWaves(wavesCleaned);
         // console.log(waves);
@@ -115,8 +118,8 @@ useEffect(() => {
 }, []);
   
   /*
-    Create a variable here that holds the contract address     
-    after you deploy!
+    this variable holds the contract address     
+    after deployment!
    */
   const contractAddress =   
    "0xef5d1A64cEB25Cd89706EbF6e141b02D0900864E";
@@ -134,7 +137,7 @@ useEffect(() => {
         console.log("Make sure you have metamask!");
         return;
       } else {
-        console.log("We have the ethereum object", ethereum);
+        ("We have the ethereum object", ethereum);
       }
 
       /*
@@ -234,12 +237,10 @@ useEffect(() => {
   }, []);
 
   /* this hides the loader after 5 seconds*/
-   useEffect ( () => 
-    {setTimeout(() => {
+   setTimeout(() => {
       setShowBar(false)
     }, 5000);
-  }, []);
-  clearTimeout();
+  
   
   return (
     <div className="mainContainer">
@@ -258,6 +259,7 @@ useEffect(() => {
           onClick={() => {
             sendWave(); 
             onClick();
+            setMsg (() => " ")
             }
           }>
           Wave at Me
